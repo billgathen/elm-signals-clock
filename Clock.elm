@@ -59,7 +59,7 @@ twoPlaces s =
 
 -- Now we'll blend these three functions into a signal of strings in the hh:mm:ss format.
 --
--- To do that, we'll use Signal.map and an anonymous function to apply asClock to each
+-- To do that, we'll use Signal.map to apply the asClock helper to each
 -- value that comes out of the tick function. Notice that this is exactly how we usually
 -- apply a map function to a list of values in an array, but with signals the values are
 -- spread out over time and we do the transformation as they arrive instead of all at once
@@ -67,7 +67,7 @@ twoPlaces s =
 --
 clock : Signal String
 clock =
-  Signal.map (\t -> asClock t) tick
+  Signal.map asClock tick
 
 -- All that remains is to pipe these values into our main function, which is what Elm
 -- executes when the page loads.
