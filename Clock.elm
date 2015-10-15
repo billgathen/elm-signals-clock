@@ -44,9 +44,9 @@ asClock : Time.Time -> String
 asClock t =
   let
     d = Date.fromTime t
-    h = Date.hour(d)   |> Basics.toString |> twoPlaces
-    m = Date.minute(d) |> Basics.toString |> twoPlaces
-    s = Date.second(d) |> Basics.toString |> twoPlaces
+    h = Date.hour(d)   |> toString |> twoPlaces
+    m = Date.minute(d) |> toString |> twoPlaces
+    s = Date.second(d) |> toString |> twoPlaces
   in
     h ++ ":" ++ m ++ ":" ++ s
 
